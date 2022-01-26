@@ -1,0 +1,107 @@
+/* html{
+    height:1746.67px;
+    width:848px;
+} */
+.tablesgh table{
+    width: 75%;
+    margin:auto;
+    height:50px;
+    
+}
+html{
+    transform: scale(0.75);
+    transform-origin: 0 0;
+    height:615px;
+    width:1580px;
+}
+.tablesgh tr{
+    line-height: 20px;
+}
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url("/static/images/homebg.126b7e990c81.jpg");
+    margin:10px;
+}
+p.welcomeMessage{
+    text-align: center;
+    font-size: 70px;
+    color: rgb(253, 168, 168);
+}
+p.clientsNumber{
+    text-align: left;
+    font-size: 50px;
+    color: rgb(253, 2, 2);
+}
+.myForm{
+    position: fixed;
+    display: block;
+    left:1000px;
+    top:500px;
+    /* right:75px; */
+    background-color: rgb(255, 135, 135);
+    border:3px solid #f1f1f1;
+    height: 270px;
+}
+
+input.ajcl{
+    left:1112px;
+    top:720px;
+    position:fixed;
+    width:200px;
+}
+.myForm .clcl{
+    top:720px;
+    left:1112px;
+    width:200px;
+    position:fixed;
+}
+.ajcli{
+    text-align:center;
+    font-weight: 700;
+}
+.myForm label{
+    font-weight:700;
+}
+.myForm2 label{
+    font-weight:700;
+}
+.myForm2{
+    /* right: 50px; */
+    background-color: rgb(255, 135, 135);
+    position:fixed;
+    top:450px;
+    height:300px;
+    left:200px;
+    width:450px;
+    border:3px solid #f1f1f1;
+    /* left:10px; */
+}
+.ajcl2{
+    top:710px;
+    left:300px;
+    position:fixed;
+    width:200px;
+}
+.clcl2{
+    top:710px;
+    width:200px;
+    position:fixed;
+    left:300px;
+}
+.myForm2 button[type="submit"]{
+    width:200px;
+    position:fixed;
+    top:670px;
+    left:300px;
+}
+select.slct{
+    position:fixed;
+    left:320px;
+    width:240px;
+}
+/* .myForm p{
+
+} */
+/* table thead th {border-top: none} */

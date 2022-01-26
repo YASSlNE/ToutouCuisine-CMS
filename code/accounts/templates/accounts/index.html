@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+{% include 'accounts/fav.html' %}
+{% load static %}
+{% block content%}
+<html lang="en">
+    <script src="{% static '/javascript/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- CSS only -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="{% static '/css/main.css' %}" rel="stylesheet">
+
+<head>
+    <!-- <script type="" -->
+    <!-- <script>document.write('<script src="/static/javascript/main.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<a href="/logout/" style="position:fixed;top:20px;left:1400px;" type="button" class="btn btn-danger  btn-lg">Logout</a>
+<body onload="return clear();" >
+    <!-- <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+      </div> -->
+      <!-- <script>
+        $(function () {
+          $("#datetimepicker1").datetimepicker();
+        });
+      </script> -->
+    <!-- <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script> -->
+
+<!-- <div class="welcomeMessage"> -->
+    <p class="welcomeMessage fw-bolder fw-light">Welcome</p>
+
+
+
+{% if clients %}
+<div id="getClients">
+<p class="clientsNumber">Le total clients : {{total}}</p>
+    <!-- <h1>HALO</h1> -->
+    <!-- <div class="row justify-content-center">-->
+    <div class="tablesgh" style="overflow-x:auto;height:600px;">   
+    <table class="table text-center table-responsive table-success table-hover table-sm">
+        <thead>
+        <tr>
+        <!-- <div class="boldTd"> -->
+            <th>Nom complet</th>
+            <th>Num telephone</th>
+            <th>Lien du profile</th>
+            <th>Date ajouté</th>
+            <th style="display:none;"></th>
+            <th style="display:none;"></th>
+        </tr>
+    </thead>
+        {% for client in clients %}
+        <tr>
+            <td>{{client.name}}</td>
+            <td>{{client.phone}}</td>
+            <td>{{client.profile_link}}</td>
+            <td>{{client.date_added}}</td>
+            <td style="display:none;">{{client.id}}</td>
+            <td><a style="position:relative;" href="{% url 'delete-record' client.id %}" class="btn btn-outline-danger">Effacer</a></td>
+        <td><a style="position:relative;" href="{% url 'get-commandes' client.id %}" class="btn btn-outline-info">Afficher les commandes</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+<!-- </div>
+</div> -->
+</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="myForm" style="display:none;">
+        <form method="POST">
+            <p class="ajcli" >Ajout d'un client</p>
+            {% csrf_token %}
+            {{form.as_p}}
+          <button class="btn btn-success btn-sm" style="top:680px;width:200px;left:1112px;position:fixed;" type="submit">Ajouter</button>
+          <button class="clcl btn btn-danger btn-sm" type="button" onclick="closeForm()">Fermer</button> 
+        </form>
+    
+    </div>
+    <input class="btn btn-secondary btn-sm ajcl" type="button" value="Ajouter un client" onclick="openForm()"></input>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <form class="myForm2" method="POST" style="display:none;">
+            <!-- <script type="text/javascript">
+                $(function () {
+                    $("#datetimepicker1").datetimepicker();
+                });
+             </script> -->
+            <p class="ajcli" >Ajout d'une commande</p>
+            {% csrf_token %}
+            <!-- {{form.as_p}} -->
+            {{form2.as_p    }}
+            <div class="col-sm-4">
+            <label for="sel-options" >Client : 
+                <select id="sel-options" class="form-select form-select-sm slct" style="display:inline-block;" name="field" id="id_field">
+                {% for cl in clients %}
+                <option value={{cl.id}}>{{cl.name}}</option>
+                {% endfor %}
+                </select>
+            </label></div>
+          <button class="btn btn-success btn-sm" type="submit">Ajouter</button>
+          <button class="btn btn-danger btn-sm clcl2" type="button" onclick="closeForm2()">Fermer</button> 
+          
+        </form>
+        <input class="btn btn-secondary btn-sm ajcl2" type="button" value="Ajouter une commande" onclick="openForm2()"></input>
+    </div>
+    
+
+
+
+
+
+
+
+    
+{% else %}
+    <h1>OUPS SORRY STH HAS HAPPENED</h1>
+{% endif %}
+
+</body>
+{% endblock %}
+</html>

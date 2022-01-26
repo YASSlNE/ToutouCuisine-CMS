@@ -1,0 +1,22 @@
+table.tb{
+    width:60%;
+    margin:auto;
+    border:3px solid #f1f1f1;
+    /* position:fixed; */
+}
+/* html{
+    transform: scale(0.75);
+    transform-origin: 0 0;
+} */
+body{
+    /* background-position: center; */
+    font-family: cursive;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-image: url('/static/images/giphy.gif'); 
+    background-repeat: no-repeat;
+    background-size:cover;                      /* <------ */
+    background-position: fixed;
+    /* margin: 550px; */
+    padding:202px;
+}
